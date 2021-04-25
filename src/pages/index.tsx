@@ -3,10 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
-import { api } from '../services/api'
 import { ptBR } from 'date-fns/locale'
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString'
 import { usePlayer } from '../contexts/PlayerContext'
+import { api } from '../services/api'
 
 import styles from './home.module.scss'
 

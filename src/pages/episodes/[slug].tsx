@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import { api } from '../../services/api'
 import { ptBR } from 'date-fns/locale'
 import { format, parseISO } from 'date-fns'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
+import { api } from '../../services/api'
 
 import styles from './episode.module.scss'
 import Image from 'next/image'
@@ -90,7 +90,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const { slug } = ctx.params
-    const { data } = await api.get(`/episodes/${slug}`)
+    const { data } = await api.get(`episodes/${slug}`)
 
     const episode = {
         id: data.id,
